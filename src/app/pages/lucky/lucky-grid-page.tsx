@@ -34,13 +34,13 @@ export function LuckyGridPage() {
                 x: 2,
                 y: 2,
                 fonts: [{
-                    text: data[4].isAwardUnlock ? data[4].awardTitle : '再抽奖' + data[4].waitUnLockCount + '次解锁',
+                    text: data[4].awardUnlock ? data[4].awardTitle : '再抽奖' + data[4].waitUnLockCount + '次解锁',
                     top: '80%',
                     fontSize: '12px',
                     fontWeight: '800'
                 }],
                 imgs: [{
-                    src: data[4].isAwardUnlock ? "/raffle-award-22.png" : "/raffle-award-22-lock.png",
+                    src: data[4].awardUnlock ? "/raffle-award-22.png" : "/raffle-award-22-lock.png",
                     width: "100px",
                     height: "100px",
                     activeSrc: "/raffle-award.png"
@@ -50,13 +50,13 @@ export function LuckyGridPage() {
                 x: 1,
                 y: 2,
                 fonts: [{
-                    text: data[5].isAwardUnlock ? data[5].awardTitle : '再抽奖' + data[5].waitUnLockCount + '次解锁',
+                    text: data[5].awardUnlock ? data[5].awardTitle : '再抽奖' + data[5].waitUnLockCount + '次解锁',
                     top: '80%',
                     fontSize: '12px',
                     fontWeight: '800'
                 }],
                 imgs: [{
-                    src: data[5].isAwardUnlock ? "/raffle-award-21.png" : "/raffle-award-21-lock.png",
+                    src: data[5].awardUnlock ? "/raffle-award-21.png" : "/raffle-award-21-lock.png",
                     width: "100px",
                     height: "100px",
                     activeSrc: "/raffle-award.png"
@@ -66,13 +66,13 @@ export function LuckyGridPage() {
                 x: 0,
                 y: 2,
                 fonts: [{
-                    text: data[6].isAwardUnlock ? data[6].awardTitle : '再抽奖' + data[6].waitUnLockCount + '次解锁',
+                    text: data[6].awardUnlock ? data[6].awardTitle : '再抽奖' + data[6].waitUnLockCount + '次解锁',
                     top: '80%',
                     fontSize: '12px',
                     fontWeight: '800'
                 }],
                 imgs: [{
-                    src: data[6].isAwardUnlock ? "/raffle-award-20.png" : "/raffle-award-20-lock.png",
+                    src: data[6].awardUnlock ? "/raffle-award-20.png" : "/raffle-award-20-lock.png",
                     width: "100px",
                     height: "100px",
                     activeSrc: "/raffle-award.png"
