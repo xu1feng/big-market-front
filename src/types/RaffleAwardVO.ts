@@ -5,4 +5,8 @@ export interface RaffleAwardVO {
     awardId: number;
     awardTitle: string;
     awardSubtitle: string;
+    sort: number;
+    awardRuleLockCount: number;
+    isAwardUnlock: boolean;
+    waitUnLockCount: number;
 }
