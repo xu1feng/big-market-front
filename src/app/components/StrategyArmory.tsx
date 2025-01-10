@@ -20,11 +20,11 @@ export function StrategyArmory() {
 
     return (
         <div
-            className="px-6 py-2 mb-8 text-white bg-blue-500 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+            className="px-6 py-2 mb-8 text-white bg-yellow-600 rounded-full shadow-lg hover:bg-yellow-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
             style={{cursor: "pointer"}}
             onClick={strategyArmoryHandle}
         >
-            装配抽奖
+            装配抽奖「测试前点击预热数据」
         </div>
     );
 }

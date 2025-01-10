@@ -1,5 +1,5 @@
 // 请求地址
-const apiHostUrl = process.env.API_HOST_URL ? process.env.API_HOST_URL : "https://console-mock.apipost.cn/mock/320ba04b-6e27-46b6-bc67-a7b839ce8043";
+const apiHostUrl = process.env.API_HOST_URL ? process.env.API_HOST_URL : "https://console-mock.apipost.cn/mock/6afa907d-6678-45e2-b867-032a11090abd";
 
 /**
  * 装配抽奖
@@ -159,4 +159,61 @@ export const queryRaffleStrategyRuleWeight = (userId?: string, activityId?: numb
             "}");
     }
 }
+
+export const queryUserCreditAccount = (userId?: string)=>{
+    try {
+        return fetch(`${apiHostUrl}/api/v1/raffle/activity/query_user_credit_account?userId=${userId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+    } catch (error) {
+        return fetch("{\n" +
+            "    \"code\": \"0001\",\n" +
+            "    \"info\": \"调用失败\",\n" +
+            "    \"data\": [\n" +
+            "}");
+    }
+}
+
+export const querySkuProductListByActivityId = (activityId?: number)=>{
+    try {
+        return fetch(`${apiHostUrl}/api/v1/raffle/activity/query_sku_product_list_by_activity_id?activityId=${activityId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+    } catch (error) {
+        return fetch("{\n" +
+            "    \"code\": \"0001\",\n" +
+            "    \"info\": \"调用失败\",\n" +
+            "    \"data\": [\n" +
+            "}");
+    }
+}
+
+export const creditPayExchangeSku = (userId?: string, sku?: number) => {
+    try {
+        return fetch(`${apiHostUrl}/api/v1/raffle/activity/credit_pay_exchange_sku`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({
+                userId: userId,
+                sku: sku
+            })
+        })
+    } catch (error) {
+        return fetch("{\n" +
+            "    \"code\": \"0001\",\n" +
+            "    \"info\": \"调用失败\",\n" +
+            "    \"data\": [\n" +
+            "}");
+    }
+}
+
+
 

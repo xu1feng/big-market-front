@@ -6,9 +6,10 @@ import dynamic from "next/dynamic";
 import {useState} from "react";
 
 const StrategyArmoryButton = dynamic(async () => (await import("./components/StrategyArmory")).StrategyArmory)
-const ActivityAccountButton = dynamic(async () => (await import("./components/ActivityAccount")).ActivityAccount)
-const CalendarSignButton = dynamic(async () => (await import("./components/CalendarSign")).CalendarSign)
 const StrategyRuleWeightButton = dynamic(async () => (await import("./components/StrategyRuleWeight")).StrategyRuleWeight)
+const MemberCardButton = dynamic(async () => (await import("./components/MemberCard")).MemberCard)
+const SkuProductButton = dynamic(async () => (await import("./components/SkuProduct")).SkuProduct)
+
 
 export default function Home() {
 
@@ -26,22 +27,20 @@ export default function Home() {
                 大营销平台 - 抽奖展示
             </header>
 
-            <div className="flex items-center space-x-4">
-                {/* 装配抽奖 */}
-                <StrategyArmoryButton/>
+            {/* 会员卡 */}
+            <MemberCardButton allRefresh={refresh}/>
 
-                {/* 账户额度 */}
-                <ActivityAccountButton refresh={refresh}/>
+            {/* 装配抽奖 */}
+            <StrategyArmoryButton/>
 
-                {/* 日历签到 */}
-                <CalendarSignButton handleRefresh={handleRefresh}/>
-            </div>
+            {/* 商品 */}
+            <SkuProductButton handleRefresh={handleRefresh}/>
 
             {/* 中间的两个div元素 */}
             <div className="flex flex-col md:flex-row gap-4 mb-8">
                 <div className="w-full md:w-1/2 p-6 bg-white shadow-lg rounded-lg">
                     <div className="text-gray-700">
-                        <LuckyWheelPage/>
+                        <LuckyWheelPage handleRefresh={handleRefresh}/>
                     </div>
                 </div>
                 <div className="w-full md:w-1/2 p-6 bg-white shadow-lg rounded-lg">
@@ -57,7 +56,7 @@ export default function Home() {
 
             {/* 底部文案 */}
             <footer className="text-gray-600 text-center my-8" style={{color: "white"}}>
-                努力成为架构师 - 沉淀中...
+                努力成为架构师！- 沉淀中ing
             </footer>
         </div>
     );
